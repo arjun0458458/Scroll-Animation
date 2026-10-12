@@ -187,7 +187,7 @@ function App() {
             <img
               className="car"
               ref={car}
-              src="/car.png"
+              src={`${import.meta.env.BASE_URL}car.png`}
               alt="White sports car"
             />
           </div>
