@@ -233,6 +233,14 @@ body {
 
 
 
+.car {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 9999 !important;
+}
+
+
 
 
 @media (prefers-reduced-motion: reduce) {
