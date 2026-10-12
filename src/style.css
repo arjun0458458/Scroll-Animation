@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #20211f;
+  background: #d9d9d4;
+  font-synthesis: none;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+.scroll-scene {
+ 
+  height: 300vh;
+  position: relative;
+  background: #d9d9d4;
+}
+
+.stage {
+  height: 100vh;
+  min-height: 600px;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  padding: 28px 5vw 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar,
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background: #252623;
+  color: #f6f5ef;
+  border-radius: 50%;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+
+
+.headline {
+  margin: auto 0 0;
+  text-align: center;
+  font-size: clamp(25px, 5.3vw, 76px);
+  font-weight: 700;
+  letter-spacing: clamp(0.12em, 1.2vw, 0.28em);
+  line-height: 1.15;
+  position: relative;
+  z-index: 2;
+}
+
+
+ 
+
+.road-text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.road-message {
+  margin: 0;
+  color: #f5f3e8;
+  font-size: clamp(18px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-align: center;
+  opacity: 0;
+}
+
+
+
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1040px;
+  width: 100%;
+  margin: 30px auto 24px;
+  position: relative;
+  z-index: 3;
+}
+
+.stat {
+  padding: 17px 18px;
+  border-radius: 3px;
+  min-height: 108px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 22px #2222220a;
+
+  
+  will-change: transform, opacity;
+}
+
+.stat strong {
+  font-size: clamp(26px, 3vw, 43px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.stat p {
+  margin: 12px 0 0;
+  max-width: 150px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.lime {
+  background: #d7ee6a;
+}
+
+.blue {
+  background: #8bd3e8;
+}
+
+.dark {
+  background: #333630;
+  color: #f5f4ed;
+}
+
+.orange {
+  background: #f09a64;
+}
+
+.road {
+  height: clamp(112px, 17vh, 170px);
+  flex: 0 0 auto;
+  width: calc(100% + 10vw);
+  margin-left: -5vw;
+  position: relative;
+  background: #292b28;
+  overflow: hidden;
+}
+
+.trail {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 100%;
+  background: #b9d94f;
+  transform: scaleX(0);
+  transform-origin: left center;
+  z-index: 1;
+  will-change: transform;
+}
+
+.road-dashes {
+  position: absolute;
+  z-index: 2;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  right: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    #f5f3e8 0 34px,
+    transparent 34px 62px
+  );
+  opacity: 0.7;
+}
+
+.car {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(145px, 22vw, 290px);
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 8px 7px #0003);
+  will-change: transform;
+}
+
+.bottom-row {
+  padding-top: 20px;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #858b52;
+}
+
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
